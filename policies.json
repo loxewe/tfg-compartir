@@ -1,0 +1,12 @@
+{
+    "default": {
+        "broadcast": "block",
+        "inter_device": false,
+        "internet": true,
+        "mdns": true,
+        "ssdp": true
+    },
+    "management_ip": "192.168.2.132",
+    "management_router_ip": "192.168.2.1",
+    "devices": {}
+}

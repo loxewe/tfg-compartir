@@ -1,0 +1,7 @@
+# Instalacion: python -m pip install -r requirements-dev.txt
+# Incluye ejecucion y pruebas; no es necesario instalar pytest en el router.
+-r requirements.txt
+pytest==9.1.1
+
+# Ejecutar solo la suite oficial: python -m pytest tests
+# No usar pytest sin ruta: puede recoger scripts historicos que actuan sobre routers.

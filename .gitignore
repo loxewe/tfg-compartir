@@ -1,0 +1,68 @@
+# Carpetas de desarrollo, cachés y pruebas
+/Archivos_router/
+/Xiaomi_Mi_4C/
+/ZTE_ZXHN H298A/
+/gl.inet/
+/__pycache__/
+
+# Scripts de prueba en la raíz
+conmutar_router.py
+test_status.py
+crypto_mercusys.js
+
+# Documentación original en la raíz (ya movida a Scripts_Finales)
+Comparativa_Routers.md
+Mercusys_Reverse_Engineering.md
+ZTE_Legacy_Reverse_Engineering.md
+
+Info TFG/Correos Alesanco.pdf
+Info TFG/European_Interdisciplinary_Cybersecurity_Conference-2.pdf
+tfg_comprehensive_review.md
+Info TFG/anexo_ii_propuesta_tfg_rev.pdf
+AGENTS.md
+Memoria tfg/Memoria_TFG_borrador_v1.pdf
+Memoria tfg/Memoria_TFG_borrador_v1.docx
+
+# Cachés y archivos temporales de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/tmp/
+/.setup_complete
+/.setup_complete.tmp
+
+# Archivos auxiliares generados por LaTeX / latexmk
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Salida compilada y recursos de control visual de la memoria
+/Memoria tfg/latex/main.pdf
+/Memoria tfg/latex/tmp/
+/Memoria tfg/latex/qa-*/
+/Memoria tfg/latex/qa-*.png
+
+# Portada PDF antigua: main.tex ya contiene la portada editable
+/Memoria tfg/latex/figuras/portada.pdf

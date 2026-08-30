@@ -1,0 +1,39 @@
+#!/bin/sh /etc/rc.common
+
+USE_PROCD=1
+START=95
+STOP=10
+
+PROJECT_DIR="/root/tfg"
+SETUP_MARKER="$PROJECT_DIR/.setup_complete"
+PYTHON="/usr/bin/python3"
+DNS_REDIRECT="dhcp.@dnsmasq[0].address=/#/192.168.2.1"
+
+prepare_network() {
+    # Cada arranque elimina restos de una ejecución anterior del portal.
+    uci -q del_list "$DNS_REDIRECT"
+
+    if [ -f "$SETUP_MARKER" ]; then
+        # El controlador proporciona DHCP después de completar la migración.
+        uci set dhcp.wifi.ignore=1
+    else
+        # dnsmasq proporciona DHCP mientras se muestra el portal inicial.
+        uci set dhcp.wifi.ignore=0
+    fi
+
+    uci commit dhcp
+    /etc/init.d/dnsmasq restart
+}
+
+start_service() {
+    prepare_network
+
+    procd_open_instance
+    if [ -f "$SETUP_MARKER" ]; then
+        procd_set_param command "$PYTHON" -u "$PROJECT_DIR/controlador_aut.py"
+        procd_set_param respawn 3600 5 5
+    else
+        procd_set_param command "$PYTHON" -u "$PROJECT_DIR/setup_portal.py" --background
+    fi
+    procd_close_instance
+}

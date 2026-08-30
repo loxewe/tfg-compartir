@@ -1,0 +1,19 @@
+# Dependencias Python de ejecucion (Python 3.11+).
+# Instalacion: python -m pip install -r requirements.txt
+# Versiones observadas en el entorno local Windows/Python 3.13 el 2026-08-30.
+# Pendientes de validar en OpenWrt; no es un bloqueo de dependencias transitivas.
+# No instala herramientas del sistema: ip, uci, nft, wifi ni servicios OpenWrt.
+
+# Portal de incorporacion.
+Flask==3.1.3
+
+# DHCP y monitorizacion TUI.
+scapy==2.7.0
+rich==15.0.0
+
+# Integraciones de routers (Scripts_Finales/).
+requests==2.34.2
+urllib3==2.7.0
+passlib==1.7.4
+# Proporciona el paquete Crypto utilizado por AES y RSA.
+pycryptodome==3.23.0
